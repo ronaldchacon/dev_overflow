@@ -7,4 +7,16 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answers = @question.answers
   end
+
+  def create
+    @question = Question.new(question_params)
+
+    @question.save
+    redirect_to @question
+  end
+
+  private
+  def question_params
+    params.require(:question).permit(:title, :content)
+  end
 end

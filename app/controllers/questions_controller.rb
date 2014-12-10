@@ -11,6 +11,8 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
+
+
   end
 
   def create
@@ -37,6 +39,23 @@ class QuestionsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def upvote
+    @question = Question.find(params[:id])
+    @question.upvote
+
+    # if request.xhr?
+    #   content_type :json
+    #   return @question.id.to_json
+    # end
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @question}
+      format.js
+    end
+
   end
 
 

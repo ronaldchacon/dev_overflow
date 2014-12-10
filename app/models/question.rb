@@ -4,7 +4,16 @@ class Question < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
   def upvote
-    puts "you did it. "
+    self.votes.create
   end
+
+  def downvote
+    self.votes.last.destroy
+  end
+
+  def votecount
+    self.votes.count
+  end
+
 end
 

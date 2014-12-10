@@ -1,10 +1,10 @@
 <h1>Questions List:</h1>
 <%= link_to("Ask New Question", new_question_path) %>
-<ul>
+<ul class = "question-list">
   <% @questions.each do |question| %>
     <li>
-      <%= link_to("#{question.title}", question) %>
-      <%= link_to(question.upvote) do %>
+      Votes: <span id="<%="#{question.id}"%>-votecount"><%=question.votecount%></span> - <%= link_to("#{question.title}", question) %>
+      <%= link_to (upvote_question_path(question)), :id => "question-upvote", remote: true, method: :post do %>
         <i class="fa fa-paper-plane"></i>
       <% end %>
     </li>

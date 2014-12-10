@@ -29,8 +29,9 @@ gem 'spring',        group: :development
 
 
 gem "font-awesome-rails"
+gem "httparty"
 
-
+gem "dotenv", group: [:test, :development]
 
 
 # Use ActiveModel has_secure_password

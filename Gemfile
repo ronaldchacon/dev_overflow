@@ -31,8 +31,7 @@ gem 'spring',        group: :development
 gem "font-awesome-rails"
 gem "httparty"
 
-gem "dotenv", group: [:test, :development]
-
+gem "figaro"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

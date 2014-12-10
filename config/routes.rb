@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'questions#index'
   resources :questions do
     post 'upvote', on: :member
+    post 'downvote', on: :member
     resources :answers do
       post 'upvote', on: :member
     end

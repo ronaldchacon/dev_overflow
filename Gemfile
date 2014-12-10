@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 
 
 
-gem 'font-awesome-sass'
+gem "font-awesome-rails"
 
 
 

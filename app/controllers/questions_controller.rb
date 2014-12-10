@@ -58,6 +58,24 @@ class QuestionsController < ApplicationController
 
   end
 
+  def downvote
+    @question = Question.find(params[:id])
+    @question.downvote
+
+    # if request.xhr?
+    #   content_type :json
+    #   return @question.id.to_json
+    # end
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @question}
+      format.js
+    end
+
+  end
+
+
 
 
   private
